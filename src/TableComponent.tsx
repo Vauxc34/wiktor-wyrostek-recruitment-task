@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import ActualData from './ActualData.json'
-import axios from 'axios'
+import axios, { AxiosResponse } from 'axios';
+import { TableInfos } from './model'
 
-const Main = () => {
+const TableComponent: React.FC = () => {
 
-  const [TableInfo, setTableInfo] = useState(ActualData.response.data)
+  const [TableInfo, setTableInfo] = useState<TableInfos[]>([])
   const [finder, setFinder] = useState('')
 
   useEffect(() => {
-     
-    
-
-
+    axios.get<TableInfos[]>('ActualData.json').then((firstRes: AxiosResponse) => {
+      setTableInfo(firstRes.data.response.data)
+    })
   }, [])
-
-  console.log(ActualData.response.data.filter(item => item.description.toLowerCase().includes('f')));
 
   return (
     
     <>
+
+    <div className='blur-bgc' />
     
-    <input type="search" name="finder" placeholder='search...' 
+    <input type="search" className='search-bar' name="finder" placeholder='search... 🔎👀' 
     value={finder}
     onChange={(e) => setFinder(e.target.value)}
     />
@@ -28,23 +27,29 @@ const Main = () => {
     <table>
         <thead>
           <tr>
-          <th>ID</th>
-          <th>Description</th>
-          <th>Received date</th>
-          <th>Assigned to</th>
-          <th>Status</th>
-          <th>Priority</th>
+          <th><p>ID</p></th>
+          <th><p>Description</p></th>
+          <th><p>Received date</p></th>
+          <th><p>Assigned to</p></th>
+          <th><p>Status</p></th>
+          <th><p>Priority</p></th>
           </tr>
         </thead>
         {TableInfo.filter(item => item.description.toLowerCase().includes(finder)).map((item, key) => (
            <tbody key={key}>
            <tr>
-           <td>{item.work_order_id}</td>
-           <td>{item.description}</td>
-           <td>{item.received_date}</td>
-          
-           <td>{item.status}</td>
-           <td>{item.priority}</td>
+           <td className='id-workers'><p>{item.work_order_id}</p></td>
+           <td><p>{item.description}</p></td>
+           <td><p>{item.received_date}</p></td>
+           <td>
+              {item.assigned_to.map((item, anotherKey) => (
+              <p key={anotherKey}>
+              {`${item.person_name} / ${item.status}`}
+              </p>
+              ))}
+           </td>
+           <td><p>{item.status}</p></td>
+           <td><p>{item.priority}</p></td>
            </tr>
          </tbody>
         ))}
@@ -54,4 +59,4 @@ const Main = () => {
   )
 }
 
-export default Main
+export default TableComponent

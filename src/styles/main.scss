@@ -1,10 +1,17 @@
-@import './table.sass';
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import './table.scss';
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;    
 }
+ 
+ body {
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 300;
+   background: #04243a;
+ }
 
 .wrapper {
     position: relative;
@@ -12,6 +19,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
-    background: #636363;
+    min-height: 100vh;
+    line-height: 1.42em;
+    color:#A7A1AE;   
+}
+
+.blur-bgc {
+    position: fixed;
+    background: url(../images/blur-bgc.jpg);
+    height: 100em;
+    width: 100vw;
+    filter: blur(3px);
 }

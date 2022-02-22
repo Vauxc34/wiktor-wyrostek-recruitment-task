@@ -1,5 +1,8 @@
-import React from 'react'
+/* styles */
+
 import './styles/main.scss'
+
+/* styles */
 
 /* components */
 
@@ -9,14 +12,11 @@ import TableComponent from './TableComponent'
 
 function App() {
 
-
   return (
   <>
 
     <div className='wrapper'> 
-    <TableComponent
-    
-    />
+    <TableComponent/>
     </div>
 
   </>
