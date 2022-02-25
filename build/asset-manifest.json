@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/your-company-scheduler.io/static/css/main.878c4da8.css",
+    "main.js": "/your-company-scheduler.io/static/js/main.ce5cb927.js",
+    "static/media/blur-bgc.jpg": "/your-company-scheduler.io/static/media/blur-bgc.25331d207b8e3d952087.jpg",
+    "index.html": "/your-company-scheduler.io/index.html",
+    "main.878c4da8.css.map": "/your-company-scheduler.io/static/css/main.878c4da8.css.map",
+    "main.ce5cb927.js.map": "/your-company-scheduler.io/static/js/main.ce5cb927.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.878c4da8.css",
+    "static/js/main.ce5cb927.js"
+  ]
+}
