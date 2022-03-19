@@ -1,4 +1,4 @@
-# Wiktor Wyrostek Recruitment Task 👋
+# Your Company Scheduler 👋
 
 ### `Hello there! - you are visiting now repository of my newest application written in React framework with little usage of typescript. My latest project was written for the ABC® corp based in Arizona (MOSTAFA VADIPOUR 2144 E TECOMA RD PHOENIX). This app will help your company - manage workers task  
 `
